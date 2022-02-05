@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{957D9C3C-F774-49C7-BFC0-725E52CD20C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Engine</RootNamespace>
+    <AssemblyName>Engine</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK, Version=3.2.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.3.2\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cgimin\engine\camera\Camera.cs" />
+    <Compile Include="cgimin\engine\deferred\DeferredRendering.cs" />
+    <Compile Include="cgimin\engine\gui\BitmapFont.cs" />
+    <Compile Include="cgimin\engine\gui\BitmapGraphic.cs" />
+    <Compile Include="cgimin\engine\helpers\Helpers.cs" />
+    <Compile Include="cgimin\engine\helpers\ShaderCompiler.cs" />
+    <Compile Include="cgimin\engine\lighting\BaseLighting.cs" />
+    <Compile Include="cgimin\engine\lighting\fullscreen\directional\DirectionalLight.cs" />
+    <Compile Include="cgimin\engine\lighting\fullscreen\fullscreensimple\FullscreenSimple.cs" />
+    <Compile Include="cgimin\engine\lighting\fullscreen\ibl\FullscreenIBL.cs" />
+    <Compile Include="cgimin\engine\lighting\local\pointlight\PointLight.cs" />
+    <Compile Include="cgimin\engine\material\BaseMaterial.cs" />
+    <Compile Include="cgimin\engine\material\castshadow\CastShadowMaterial.cs" />
+    <Compile Include="cgimin\engine\material\gbufferlayout\GBufferLayoutMaterial.cs" />
+    <Compile Include="cgimin\engine\material\gbuffermask\GBufferMaskMaterial.cs" />
+    <Compile Include="cgimin\engine\material\gbufferreceiveshadowlayout\GBufferReceiveShadowLayoutMaterial.cs" />
+    <Compile Include="cgimin\engine\material\gbufferreceiveshadowmask\GBufferReceiveShadowMaskMaterial.cs" />
+    <Compile Include="cgimin\engine\material\simpleblend\SimpleBlendMaterial.cs" />
+    <Compile Include="cgimin\engine\material\simpletexture\SimpleTextureMaterial.cs" />
+    <Compile Include="cgimin\engine\object3d\BaseObject3D.cs" />
+    <Compile Include="cgimin\engine\object3d\CubeObject3D.cs" />
+    <Compile Include="cgimin\engine\object3d\ObjLoaderObject3D.cs" />
+    <Compile Include="cgimin\engine\octree\Octree.cs" />
+    <Compile Include="cgimin\engine\octree\OctreeEntity.cs" />
+    <Compile Include="cgimin\engine\postprocessing\BasePostProcessing.cs" />
+    <Compile Include="cgimin\engine\postprocessing\blur\Blur.cs" />
+    <Compile Include="cgimin\engine\postprocessing\combinedcolorcorrection\CombinedColorCorrection.cs" />
+    <Compile Include="cgimin\engine\postprocessing\fxaa\FXAA.cs" />
+    <Compile Include="cgimin\engine\postprocessing\splitcolors\SplitColors.cs" />
+    <Compile Include="cgimin\engine\shadowmapping\CascadedShadowMapping.cs" />
+    <Compile Include="cgimin\engine\skybox\SkyBox.cs" />
+    <Compile Include="cgimin\engine\texture\TextureManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cgimin\engine\gui\shader\BitmapFont_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\gui\shader\BitmapFont_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\gui\shader\BitmapGraphic_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\gui\shader\BitmapGraphic_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\lighting\fullscreen\directional\DirectionalLight_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\lighting\fullscreen\directional\DirectionalLight_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\lighting\fullscreen\fullscreensimple\FullscreenSimple_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\lighting\fullscreen\fullscreensimple\FullscreenSimple_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\lighting\fullscreen\ibl\FullscreenIBL_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\lighting\fullscreen\ibl\FullscreenIBL_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\lighting\local\pointlight\PointLight_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\lighting\local\pointlight\PointLight_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\lighting\local\pointlight\sphere.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\castshadow\CastShadow_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\castshadow\CastShadow_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\gbufferlayout\GBufferLayout_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\gbufferlayout\GBufferLayout_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\gbuffermask\GBufferMask_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\gbuffermask\GBufferMask_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\gbufferreceiveshadowlayout\GBufferReceiveShadowLayout_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\gbufferreceiveshadowlayout\GBufferReceiveShadowLayout_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\gbufferreceiveshadowmask\GBufferReceiveShadowMask_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\gbufferreceiveshadowmask\GBufferReceiveShadowMask_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\simpleblend\Simple_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\simpleblend\Simple_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\simpletexture\Simple_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\material\simpletexture\Simple_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\postprocessing\blur\Blur_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\postprocessing\blur\Blur_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\postprocessing\combinedcolorcorrection\CombinedColorCorrection_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\postprocessing\combinedcolorcorrection\CombinedColorCorrection_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\postprocessing\fxaa\FXAA_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\postprocessing\fxaa\FXAA_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\postprocessing\splitcolors\SplitColors_FS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="cgimin\engine\postprocessing\splitcolors\SplitColors_VS.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cgimin\engine\lighting\fullscreen\ibl\ibl_brdf_lut.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

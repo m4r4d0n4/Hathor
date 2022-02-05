@@ -1,0 +1,8 @@
+engine/bin/
+example_project/obj/
+engine/obj/
+example_project/bin/
+packages/
+bin/
+obj/
+*.suo

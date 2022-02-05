@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "0a1e9c18-ce91-4a61-a246-de28a7510aa2": {
+      "ProjectGuid": "0a1e9c18-ce91-4a61-a246-de28a7510aa2",
+      "DisplayName": "example_project",
+      "ColorIndex": 0
+    },
+    "957d9c3c-f774-49c7-bfc0-725e52cd20c3": {
+      "ProjectGuid": "957d9c3c-f774-49c7-bfc0-725e52cd20c3",
+      "DisplayName": "engine",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
