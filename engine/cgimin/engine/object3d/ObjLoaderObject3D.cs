@@ -48,6 +48,18 @@ namespace cgimin.engine.object3d
             CreateVAO();
 
         }
+        public ObjLoaderObject3D(ObjLoaderObject3D obj)
+        {
+            //Reusing Buffer info when instancing new objects
+            this.Positions = obj.Positions;
+            this.Normals = obj.Normals; 
+            this.Tangents = obj.Tangents;
+            this.UVs = obj.UVs;
+            this.Tangents = obj.Tangents;
+            this.BiTangents = obj.BiTangents;
+
+            CreateVAO();
+        }
 
 
     }

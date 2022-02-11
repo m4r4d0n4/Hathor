@@ -11,7 +11,7 @@ namespace cgimin.engine.object3d
     {
         // the transformation (position, rotation, scale) of the object
         public Matrix4 Transformation = Matrix4.Identity;
-
+        
         // lists, filled with the 3d-data
         public List<Vector3> Positions;
         public List<Vector3> Normals;
